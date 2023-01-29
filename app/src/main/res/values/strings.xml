@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IMDB Movies List</string>
+    <string name="search_movies">Search movies</string>
+    <string name="movies">Movies</string>
+    <string name="browse">Browse</string>
+    <string name="sample_plot">Frustrated at being marginalized at work, Peggy Carter goes on an unauthorized solo field mission.</string>
+</resources>

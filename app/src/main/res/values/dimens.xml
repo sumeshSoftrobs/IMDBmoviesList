@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingPrimary">20dp</dimen>
+    <dimen name="paddingSecondary">15dp</dimen>
+    <dimen name="textBigHeading">26sp</dimen>
+    <dimen name="textNormalHeading">16sp</dimen>
+    <dimen name="textParagraph">11sp</dimen>
+</resources>

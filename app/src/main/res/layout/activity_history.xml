@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ui.activities.history.HistoryActivity">
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/paddingPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="History"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textBigHeading"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Of searched movies"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textParagraph" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+
+                    <ImageView
+                        android:id="@+id/iconClose"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        app:tint="@color/white"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_baseline_close_24"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingPrimary"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:drawableTint="#707070"
+            android:drawablePadding="15dp"
+            android:textColorHint="#707070"
+            android:hint="Search movies"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/textParagraph"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/search_bg_layout"
+            android:orientation="horizontal"
+            android:padding="@dimen/paddingSecondary">
+
+        </EditText>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/notFoundTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie not found."
+        android:textColor="@color/gray"
+        android:visibility="gone"
+        android:textSize="@dimen/textNormalHeading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/moviesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:itemCount="7"
+        android:padding="@dimen/paddingPrimary"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/movies_list_recycler_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="30dp"
+        android:id="@+id/loader"
+        android:visibility="gone"
+        android:layout_margin="@dimen/paddingPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
